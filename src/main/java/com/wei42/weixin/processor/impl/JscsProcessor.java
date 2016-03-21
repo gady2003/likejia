@@ -45,8 +45,7 @@ public class JscsProcessor implements Processor {
 	}
 
     @Override
-    public String processUnsubscribeMessage(Map<String, String> map) {
-        return null;
+    public void processUnsubscribeMessage(Map<String, String> map) {
     }
 
     @Override
@@ -91,5 +90,8 @@ public class JscsProcessor implements Processor {
 		return MessageUtil.newsMessage2Xml(newsMsg);
 	}
 
-	
+    @Override
+    public void processLocationMessage(Map<String, String> map) {
+
+    }
 }

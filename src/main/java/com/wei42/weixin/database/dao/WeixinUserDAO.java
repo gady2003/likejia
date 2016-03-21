@@ -1,7 +1,6 @@
 package com.wei42.weixin.database.dao;
 
 import com.wei42.weixin.database.domain.UserDO;
-import com.wei42.weixin.util.WeixinConstants;
 
 /**
  * Created by xuanxiao on 2016-03-21.
@@ -24,6 +23,10 @@ public class WeixinUserDAO extends  BaseDao {
         sqlSession.update("updateuserstatus",userDO);
     }
 
+    public void updateWeixinUserCurAddress(UserDO userDO){
+        sqlSession.update("updateusercuraddress",userDO);
+    }
+
     public static  void main(String[] args){
         WeixinUserDAO dao = new WeixinUserDAO();
 //        WeixinUser user = new WeixinUser();
@@ -34,11 +37,11 @@ public class WeixinUserDAO extends  BaseDao {
 //        user.setStatus("offline");
 //        user.setCreatetime(new Date());
 //        dao.insertWeixinUser(user);
-//        UserDO user = dao.queryWeixinUserbyid(2);
-//        System.out.println(user.getWxnick());
-        UserDO userDO = new UserDO();
-        userDO.setStatus(WeixinConstants.UNSUBSCRIBE_STATUS);
-        userDO.setWxid("o7elat4UcAdxfQFf9ndT6P9h_YOw");
-        dao.updateWeixinUserStatus(userDO);
+        UserDO user = dao.queryWeixinUserbyid(2);
+        System.out.println(user.getWxnick());
+//        UserDO userDO = new UserDO();
+//        userDO.setStatus(WeixinConstants.UNSUBSCRIBE_STATUS);
+//        userDO.setWxid("o7elat4UcAdxfQFf9ndT6P9h_YOw");
+//        dao.updateWeixinUserStatus(userDO);
     }
 }

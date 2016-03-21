@@ -36,10 +36,14 @@ public class MessageRequestHandler {
 					 
 //					 String fromUserName = map.get("FromUserName");
 //					 System.err.println(" User :"+ fromUserName +" 退出服务号");
-                     return  processor.processUnsubscribeMessage(map);
+                     processor.processUnsubscribeMessage(map);
+                     return "sucess";
 				 }else if(WeixinConstants.EVENT_TYPE_CLICK.equals(eventType)){
 					 return processor.processClickMessage(map);
-				 }
+				 }else if(WeixinConstants.EVENT_TYPE_LOCATION.equals(eventType)){
+                     processor.processLocationMessage(map);
+                     return "sucess";
+                 }
 						 
 			 }else{
 				 System.out.println("no handler for msgtype:"+ msgType);

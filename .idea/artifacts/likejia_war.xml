@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="likejia:war">
+    <output-path>$PROJECT_DIR$/target</output-path>
+    <root id="archive" name="likejia.war">
+      <element id="artifact" artifact-name="likejia:war exploded" />
+    </root>
+  </artifact>
+</component>

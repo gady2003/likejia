@@ -68,17 +68,28 @@ public class LikejiaProcessor implements Processor {
     }
 
     @Override
-    public String processUnsubscribeMessage(Map<String, String> map) {
+    public void processUnsubscribeMessage(Map<String, String> map) {
         String fromUserName = map.get("FromUserName");
         UserDO userDO = new UserDO();
         userDO.setWxid(fromUserName);
         userDO.setStatus(WeixinConstants.UNSUBSCRIBE_STATUS);
         weixinUserDAO.updateWeixinUserStatus(userDO);
-        return null;
     }
 
     @Override
     public String processClickMessage(Map<String, String> map) {
         return null;
+    }
+
+    @Override
+    public void processLocationMessage(Map<String, String> map) {
+        String fromUserName = map.get("FromUserName");
+        String latitude = map.get("Latitude");
+        String longitude = map.get("Longitude");
+        String precision = map.get("Precision");
+        UserDO userDO = new UserDO();
+        userDO.setCuraddress(latitude+","+longitude+","+precision);
+        userDO.setWxid(fromUserName);
+        weixinUserDAO.updateWeixinUserCurAddress(userDO);
     }
 }

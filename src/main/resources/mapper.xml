@@ -13,4 +13,7 @@
     <update id="updateuserstatus" parameterType="com.wei42.weixin.database.domain.UserDO" >
         UPDATE weixinuser SET status = #{status} WHERE wxid = #{wxid}
     </update>
+    <update id="updateusercuraddress" parameterType="com.wei42.weixin.database.domain.UserDO">
+        UPDATE weixinuser SET curaddress=#{curaddress} WHERE wxid = #{wxid}
+    </update>
 </mapper>

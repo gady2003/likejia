@@ -22,6 +22,8 @@ public class WeixinConstants {
 	
 	public static final String EVENT_TYPE_CLICK = "CLICK";
 
+    public static final String EVENT_TYPE_LOCATION = "LOCATION";
+
     // 微信用户状态
     public static final String OFF_LINE_STATUS = "offline";
 

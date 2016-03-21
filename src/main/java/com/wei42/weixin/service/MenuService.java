@@ -87,16 +87,31 @@ public class MenuService {
 
 	public static void main(String[] args) {
 		
-		Button btn1 = new Button("商城", "view", null, "http://wap.koudaitong.com/v2/home/8m5g97v0", null);
+//		Button btn1 = new Button("商城", "view", null, "http://wap.koudaitong.com/v2/home/8m5g97v0", null);
+//
+//		Button sb3 = new Button("询价", "view", null, "http://121.40.249.61/xj.html", null);
+//		Button sb4 = new Button("大客户采购", "view", null, "http://121.40.249.61/dkhcg.html", null);
+//		Button sb5 = new Button("行情", "click", "hq", null, null);
+//		Button btn2 = new Button("商机行情", null, null, null, new Button[] {
+//				sb3, sb4,sb5 });
+//
+//
+//		Button btn3 = new Button("我的订单", "view", null, "http://121.40.249.61/myorder.html", null);
 
-		Button sb3 = new Button("询价", "view", null, "http://121.40.249.61/xj.html", null);
-		Button sb4 = new Button("大客户采购", "view", null, "http://121.40.249.61/dkhcg.html", null);
-		Button sb5 = new Button("行情", "click", "hq", null, null);
-		Button btn2 = new Button("商机行情", null, null, null, new Button[] {
-				sb3, sb4,sb5 });
+        Button sb1 = new Button("家电维修","view",null,"http://hellomachine.cn/index.htm",null);
+        Button sb2 = new Button("家电保养","view",null,"http://hellomachine.cn/index.htm",null);
+        Button sb3 = new Button("家电回收","view",null,"http://hellomachine.cn/index.htm",null);
+        Button btn1 = new Button("狸客服务", null, null, null, new Button[] {
+                sb1, sb2,sb3 });
 
-		
-		Button btn3 = new Button("我的订单", "view", null, "http://121.40.249.61/myorder.html", null);
+        Button sb4 = new Button("狸客入驻", "view", null, "http://hellomachine.cn/index.htm", null);
+        Button sb5 = new Button("狸客服务", "view", null, "http://hellomachine.cn/index.htm", null);
+        Button btn2 = new Button("工程师", null, null, null, new Button[] {
+                sb4, sb5 });
+
+        Button sb6 = new Button("我的订单", "view", null, "http://hellomachine.cn/page/client/14.htm", null);
+        Button sb7 = new Button("个人信息", "view", null, "http://hellomachine.cn/page/client/25.htm", null);
+        Button btn3 = new Button("个人中心", null, null, null, new Button[]{sb6,sb7});
 
 		Menu menu = new Menu(new Button[] { btn1, btn2, btn3 });
 		createMenu(menu);
